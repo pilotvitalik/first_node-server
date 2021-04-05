@@ -1,3 +1,3 @@
-require(‘dotenv’).load();
+require('dotenv').config()
 
 console.log(process.env.MYAPIKEY);
