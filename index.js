@@ -30,7 +30,3 @@ fs.writeFile('create_file.txt', 'Hello world', (err) => {
 fs.writeFile('./one/create_file.txt', 'Hello world!', (err) => {
 	if(err) console.log(err);
 });
-
-fs.writeFile('./two/create_file.txt', 'Hello world!!!!!', (err) => {
-	if(err) console.log(err);
-});
