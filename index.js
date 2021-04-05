@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const fs = require('fs');
+const path = require('path');
 
 // fs.readFile('text.txt', 'utf-8', (err, data) => {
 // 	console.log(data);
@@ -16,5 +17,7 @@ fs.readdir('./one/', (err, data) => {
 		return false
 	}
 	console.log(data);
-
+	data.forEach(item => {
+		console.log(path.extname(item));
+	})
 });
