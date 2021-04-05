@@ -19,6 +19,6 @@ fs.readdir('./one/', (err, data) => {
 	console.log(data);
 	data.forEach(item => {
 		console.log(path.extname(item));
-		console.log(fs.statSync(item));
+		console.log(fs.statSync(`./one/${item}`));
 	})
 });
