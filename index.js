@@ -1,1 +1,3 @@
-console.log(process.env);
+require('dotenv').load();
+
+console.log(process.env.MYAPIKEY);
