@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const fs = require('fs');
 const path = require('path');
+const person = require('./test.json');
 
 const obj = {
 	name: 'Vitaliy',
@@ -9,6 +10,8 @@ const obj = {
 	auto: 'Skoda'
 }
 
-fs.writeFile('test.json', JSON.stringify(obj), (err) => {
+fs.writeFileSync('test.json', JSON.stringify(obj), (err) => {
 	if (err) console.log(err);
 });
+
+console.log(person);
