@@ -16,7 +16,7 @@ const obj = {
 // 	if (err) console.log(err);
 // });
 
-fs.createReadStream(csv)
+fs.createReadStream('test1.csv')
   .pipe(csv())
   .on('data', (data) => results.push(data))
   .on('end', () => {
