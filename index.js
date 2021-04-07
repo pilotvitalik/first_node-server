@@ -6,13 +6,19 @@ const port = 3000;
 
 const server = http.createServer((req, res) => {
   const reqURL = url.parse(req.url, true)
-  if (req.url !== '/favicon.ico'){
-    console.log(reqURL.query);
-    console.log(reqURL.query.ghjgj)
-  }
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
+  //res.end('Hello, World!\n');
+  if (req.url !== '/favicon.ico'){
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk.toString();
+    })
+    req.on('end', () => {
+      console.log(body);
+      res.end('ok');
+    })
+  }
 });
 
 server.listen(port, hostname, () => {
